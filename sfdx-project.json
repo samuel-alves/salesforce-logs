@@ -1,0 +1,18 @@
+{
+  "packageDirectories": [
+    {
+      "path": "app-default",
+      "default": true
+    },
+    {
+      "path": "app-salesforce-logs"
+    },
+    {
+      "path": "app-trigger-framework"
+    }
+  ],
+  "name": "salesforce-logs",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "54.0"
+}
