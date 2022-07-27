@@ -1,5 +1,12 @@
+/**
+ * @description       :
+ * @author            : samuelalves@loba.pt
+ * @group             :
+ * @last modified on  : 2022-07-27
+ * @last modified by  : samuelalves@loba.pt
+ **/
 @isTest
-private class TriggerHandler_Test {
+private class TriggerHandlerTest {
     private static final String TRIGGER_CONTEXT_ERROR = 'Trigger handler called outside of Trigger execution';
 
     private static String lastMethodCalled;
