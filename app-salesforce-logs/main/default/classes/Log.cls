@@ -3,7 +3,7 @@
  * by publishing a Platform Event
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-05-31
  * @last modified by  : samuelalves@loba.pt
  **/
 public inherited sharing class Log {
@@ -67,7 +67,7 @@ public inherited sharing class Log {
      * @param exceptionToLog Exception to format and log
      */
     public void add(Exception exceptionToLog) {
-        this.add(exceptionToLog, null);
+        this.add(exceptionToLog, null, null);
     }
 
     /**
@@ -77,9 +77,27 @@ public inherited sharing class Log {
      * @param severity       LogSeverity enum
      */
     public void add(Exception exceptionToLog, LogSeverity severity) {
+        this.add(exceptionToLog, severity, null);
+    }
+
+    /**
+     * @description Add an formated exception message to the buffer without
+     * publishing it.
+     * @param Exception exceptionToLog
+     * @param LogSeverity severity
+     * @param String tag
+     **/
+    public void add(
+        Exception exceptionToLog,
+        LogSeverity severity,
+        String tag
+    ) {
         LogMessage msg = new LogMessage(exceptionToLog);
         if (severity != null) {
             msg.severity = severity;
+        }
+        if (tag != null) {
+            msg.tag = tag;
         }
         buffer.add(msg);
     }
@@ -109,7 +127,7 @@ public inherited sharing class Log {
     public void publish() {
         List<SObject> rawLogs = new List<SObject>();
         for (LogMessage msg : this.buffer) {
-            rawLogs.add(msg.toEvent());
+            rawLogs.addAll(msg.toEvent());
         }
         EventBus.publish(rawLogs);
         this.buffer.clear();
