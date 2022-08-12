@@ -2,7 +2,7 @@
  * @description       :
  * @author            : samuelalves@loba.pt
  * @group             :
- * @last modified on  : 2022-07-27
+ * @last modified on  : 2022-08-11
  * @last modified by  : samuelalves@loba.pt
  **/
 @isTest
@@ -11,10 +11,10 @@ private class TriggerHandlerTest {
 
     private static String lastMethodCalled;
 
-    private static TriggerHandler_Test.TestHandler handler;
+    private static TriggerHandlerTest.TestHandler handler;
 
     static {
-        handler = new TriggerHandler_Test.TestHandler();
+        handler = new TriggerHandlerTest.TestHandler();
         // override its internal trigger detection
         handler.isTriggerExecuting = true;
     }
@@ -362,31 +362,31 @@ private class TriggerHandlerTest {
 
     private class TestHandler extends TriggerHandler {
         public override void beforeInsert() {
-            TriggerHandler_Test.lastMethodCalled = 'beforeInsert';
+            TriggerHandlerTest.lastMethodCalled = 'beforeInsert';
         }
 
         public override void beforeUpdate() {
-            TriggerHandler_Test.lastMethodCalled = 'beforeUpdate';
+            TriggerHandlerTest.lastMethodCalled = 'beforeUpdate';
         }
 
         public override void beforeDelete() {
-            TriggerHandler_Test.lastMethodCalled = 'beforeDelete';
+            TriggerHandlerTest.lastMethodCalled = 'beforeDelete';
         }
 
         public override void afterInsert() {
-            TriggerHandler_Test.lastMethodCalled = 'afterInsert';
+            TriggerHandlerTest.lastMethodCalled = 'afterInsert';
         }
 
         public override void afterUpdate() {
-            TriggerHandler_Test.lastMethodCalled = 'afterUpdate';
+            TriggerHandlerTest.lastMethodCalled = 'afterUpdate';
         }
 
         public override void afterDelete() {
-            TriggerHandler_Test.lastMethodCalled = 'afterDelete';
+            TriggerHandlerTest.lastMethodCalled = 'afterDelete';
         }
 
         public override void afterUndelete() {
-            TriggerHandler_Test.lastMethodCalled = 'afterUndelete';
+            TriggerHandlerTest.lastMethodCalled = 'afterUndelete';
         }
     }
 }
