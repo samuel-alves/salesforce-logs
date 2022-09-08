@@ -3,7 +3,7 @@
  * by publishing a Platform Event
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-31
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  **/
 public inherited sharing class Log {
@@ -166,6 +166,15 @@ public inherited sharing class Log {
      **/
     public void publish(String messageToLog, LogSeverity severity, String tag) {
         currentInstance.add(messageToLog, severity, tag);
+        this.publish();
+    }
+
+    public void publish(
+        Exception exceptionToLog,
+        LogSeverity severity,
+        String tag
+    ) {
+        currentInstance.add(exceptionToLog, severity, tag);
         this.publish();
     }
 }

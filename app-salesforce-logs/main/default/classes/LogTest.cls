@@ -2,7 +2,7 @@
  * @description       :
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  * Modifications Log
  * Ver   Date         Author                 Modification
@@ -73,6 +73,18 @@ public with sharing class LogTest {
             insert newAcc;
         } catch (Exception e) {
             logger.add(e, LogSeverity.INFO);
+        }
+        Test.stopTest();
+    }
+
+    @IsTest
+    static void methodTestPublishExceptionWithSeverityTag() {
+        Test.startTest();
+        try {
+            Account newAcc = null;
+            insert newAcc;
+        } catch (Exception e) {
+            logger.publish(e, LogSeverity.INFO, CLASSNAME);
         }
         Test.stopTest();
     }
