@@ -2,7 +2,7 @@
  * @description       :
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  **/
 @isTest
@@ -66,8 +66,8 @@ public with sharing class LogEventDeleteBatchTest {
             newLog.Quiddity__c = 'FUTURE';
             newLog.Tag__c = 'UNIT TEST LOG ' + i;
             newLog.Severity__c = 'ERROR';
-            newLog.Request_Id__c = '4gjswdJuHCzm08G-mMQpw-' + i;
-            newLog.Log_Data__c = 'Teste ' + i;
+            newLog.RequestId__c = '4gjswdJuHCzm08G-mMQpw-' + i;
+            newLog.LogData__c = 'Teste ' + i;
             lstLogs.add(newLog);
         }
         insert lstLogs;

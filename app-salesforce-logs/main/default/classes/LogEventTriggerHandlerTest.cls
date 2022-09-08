@@ -2,7 +2,7 @@
  * @description       :
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  * Modifications Log
  * Ver   Date         Author                 Modification
@@ -16,11 +16,11 @@ public with sharing class LogEventTriggerHandlerTest {
 
         Test.startTest();
         LogEvent__c log = new LogEvent__c();
-        log.Request_Id__c = '1234';
+        log.RequestId__c = '1234';
         log.Quiddity__c = 'REST';
         log.Severity__c = 'Debug';
-        log.tag__c = 'Test Log';
-        log.Log_Data__c =
+        log.Tag__c = 'Test Log';
+        log.LogData__c =
             '{' +
             +'"statusDescription" : "Update failed. First exception on row 0; first error: MISSING_ARGUMENT, Id not specified in an update call: []",' +
             +'"status" : "ERROR"' +
@@ -28,11 +28,11 @@ public with sharing class LogEventTriggerHandlerTest {
         lstLogEvent.add(log);
 
         LogEvent__c logParent = new LogEvent__c();
-        logParent.Request_Id__c = '1234';
+        logParent.RequestId__c = '1234';
         logParent.Quiddity__c = 'REST';
         logParent.Severity__c = 'Debug';
-        logParent.tag__c = 'Test Log Parent';
-        logParent.Log_Data__c =
+        logParent.Tag__c = 'Test Log Parent';
+        logParent.LogData__c =
             '{' +
             +'"statusDescription" : "Update failed. First exception on row 0; first error: MISSING_ARGUMENT, Id not specified in an update call: []",' +
             +'"status" : "ERROR"' +
@@ -44,7 +44,7 @@ public with sharing class LogEventTriggerHandlerTest {
         Test.stopTest();
 
         List<LogEvent__c> lstLogsInserted = [
-            SELECT Id, Request_Id__c
+            SELECT Id, RequestId__c
             FROM LogEvent__c
             WHERE Quiddity__c = 'REST'
         ];

@@ -152,7 +152,7 @@
     <pluralLabel>Log Events</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields
-    >Request_Id__c</searchResultsAdditionalFields>
+    >RequestId__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields
     >Quiddity__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Tag__c</searchResultsAdditionalFields>
@@ -160,7 +160,7 @@
     >Severity__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Parent__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields
-    >Log_Data__c</searchResultsAdditionalFields>
+    >LogData__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields
     >CREATED_DATE</searchResultsAdditionalFields>
     </searchLayouts>

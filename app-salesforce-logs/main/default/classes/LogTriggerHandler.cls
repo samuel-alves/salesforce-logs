@@ -3,7 +3,7 @@
  * log messages.
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  **/
 public inherited sharing class LogTriggerHandler extends TriggerHandler {
@@ -25,9 +25,9 @@ public inherited sharing class LogTriggerHandler extends TriggerHandler {
         for (Log__e event : this.incomingRecords) {
             events.add(
                 new LogEvent__c(
-                    Log_Data__c = event.Log_Message__c,
+                    LogData__c = event.LogMessage__c,
                     Quiddity__c = event.Quiddity__c,
-                    Request_Id__c = event.Request_Id__c,
+                    RequestId__c = event.RequestId__c,
                     Severity__c = event.Severity__c,
                     Tag__c = event.Tag__c
                 )

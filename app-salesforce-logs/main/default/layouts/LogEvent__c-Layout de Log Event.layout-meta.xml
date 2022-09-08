@@ -13,7 +13,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Request_Id__c</field>
+                <field>RequestId__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -39,7 +39,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Log_Data__c</field>
+                <field>LogData__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

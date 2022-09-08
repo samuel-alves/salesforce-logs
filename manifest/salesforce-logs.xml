@@ -18,15 +18,15 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>LogEvent__c.Log_Data__c</members>
+        <members>LogEvent__c.LogData__c</members>
         <members>LogEvent__c.Parent__c</members>
         <members>LogEvent__c.Quiddity__c</members>
-        <members>LogEvent__c.Request_Id__c</members>
+        <members>LogEvent__c.RequestId__c</members>
         <members>LogEvent__c.Severity__c</members>
         <members>LogEvent__c.Tag__c</members>
-        <members>Log__e.Log_Message__c</members>
+        <members>Log__e.LogMessage__c</members>
         <members>Log__e.Quiddity__c</members>
-        <members>Log__e.Request_Id__c</members>
+        <members>Log__e.RequestId__c</members>
         <members>Log__e.Severity__c</members>
         <members>Log__e.Tag__c</members>
         <name>CustomField</name>

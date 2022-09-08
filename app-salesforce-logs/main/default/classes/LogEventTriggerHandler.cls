@@ -2,7 +2,7 @@
  * @description       :
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-30
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  * Modifications Log
  * Ver   Date         Author                 Modification
@@ -26,34 +26,34 @@ public inherited sharing class LogEventTriggerHandler extends TriggerHandler {
         // LOGs
         // ---------------------------------------------
         List<LogEvent__c> logs = [
-            SELECT Id, Request_Id__c, Parent__c, CreatedDate
+            SELECT Id, RequestId__c, Parent__c, CreatedDate
             FROM LogEvent__c
             WHERE Id IN :logIds AND Parent__c = NULL
         ];
 
         for (LogEvent__c log : logs) {
-            parentLogs.put(log.Request_Id__c, null);
+            parentLogs.put(log.RequestId__c, null);
         }
 
         // Parent LOGs
         // ---------------------------------------------
         for (LogEvent__c log : [
-            SELECT Id, Request_Id__c, Parent__c, CreatedDate
+            SELECT Id, RequestId__c, Parent__c, CreatedDate
             FROM LogEvent__c
-            WHERE Request_Id__c IN :parentLogs.keyset() AND Parent__c = NULL
+            WHERE RequestId__c IN :parentLogs.keyset() AND Parent__c = NULL
         ]) {
-            LogEvent__c parentLog = parentLogs.get(log.Request_Id__c);
+            LogEvent__c parentLog = parentLogs.get(log.RequestId__c);
             if (parentLog == null) {
-                parentLogs.put(log.Request_Id__c, log);
+                parentLogs.put(log.RequestId__c, log);
             } else if (parentLog.Id > log.Id) {
-                parentLogs.put(log.Request_Id__c, log);
+                parentLogs.put(log.RequestId__c, log);
             }
         }
 
         // LOGs
         // ---------------------------------------------
         for (LogEvent__c log : logs) {
-            LogEvent__c parentLog = parentLogs.get(log.Request_Id__c);
+            LogEvent__c parentLog = parentLogs.get(log.RequestId__c);
             if (log.Parent__c != null || parentLog == null)
                 continue;
             log.Parent__c = parentLog.Id;

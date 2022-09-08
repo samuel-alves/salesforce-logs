@@ -3,7 +3,7 @@
  * like Quiddity and RequestID
  * @author            : samuel.f.alves
  * @group             :
- * @last modified on  : 2022-05-31
+ * @last modified on  : 2022-09-08
  * @last modified by  : samuelalves@loba.pt
  **/
 public inherited sharing class LogMessage {
@@ -11,7 +11,7 @@ public inherited sharing class LogMessage {
     private static Map<String, Schema.SObjectField> sObjLogFields = sObjLogSchema.fields.getMap();
 
     public static final Integer STRING_MAX_SIZE_MESSAGE = sObjLogFields.get(
-            'Log_Message__c'
+            'LogMessage__c'
         )
         .getDescribe()
         .getLength();
@@ -26,7 +26,7 @@ public inherited sharing class LogMessage {
         .getDescribe()
         .getLength();
     public static final Integer STRING_MAX_SIZE_REQUEST_ID = sObjLogFields.get(
-            'Request_Id__c'
+            'RequestId__c'
         )
         .getDescribe()
         .getLength();
@@ -75,11 +75,11 @@ public inherited sharing class LogMessage {
                 output.add(
                     new Log__e(
                         Tag__c = this.tag?.left(STRING_MAX_SIZE_TAG),
-                        Log_Message__c = this.message.substring(
+                        LogMessage__c = this.message.substring(
                             startIndex,
                             endIndex
                         ),
-                        Request_Id__c = this.requestId
+                        RequestId__c = this.requestId
                             ?.left(STRING_MAX_SIZE_REQUEST_ID),
                         Quiddity__c = this.quiddity
                             ?.name()
