@@ -50,5 +50,5 @@
         <members>LogEvent__c.Today</members>
         <name>ListView</name>
     </types>
-    <version>53.0</version>
+    <version>55.0</version>
 </Package>

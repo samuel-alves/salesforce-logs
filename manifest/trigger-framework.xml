@@ -5,5 +5,5 @@
         <members>TriggerHandler_Test</members>
         <name>ApexClass</name>
     </types>
-    <version>53.0</version>
+    <version>55.0</version>
 </Package>
